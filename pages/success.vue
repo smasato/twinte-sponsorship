@@ -3,19 +3,8 @@
     <h1 class="title">
       ありがとうございました!
     </h1>
-    <h2 class="kind">
-      <nav v-if="getParameter.type === 'onetime'">
-        1回きりの寄付
-      </nav>
-      <nav v-else-if="getParameter.type === 'subscription'">
-        サブスクリプション寄付（継続寄付）
-      </nav>
-    </h2>
-    <p class="has-text-centered has-text-primary price">
-      ¥{{ getParameter.amount }}
-    </p>
     <p>
-      以上の金額が寄付されました。
+      寄付金の受付が完了しました。
       <br>
       <nuxt-link to="/mypage">
         マイページ
@@ -40,20 +29,11 @@
 <script>
 export default {
   computed: {
-    getParameter () {
-      return {
-        type: this.$route.query.type,
-        amount: this.$route.query.amount
-      }
-    }
+
   },
   methods: {
     makeText () {
-      if (this.getParameter.type === 'subscription') {
-        return 'Twin:teに月課金として' + this.getParameter.amount + '円/月の寄付登録をしました！'
-      } else {
-        return 'Twin:teに' + this.getParameter.amount + '円を寄付しました！'
-      }
+      return 'Twin:teに寄付しました！'
     }
   }
 }

@@ -90,9 +90,6 @@
         </div>
         <div v-for="item in paymentItems" :key="item.id" class="history">
           <div v-if="item.status==='Succeeded'" class="columns is-mobile">
-            <div class="column is-5-mobile is-3-tablet is-2-desktop">
-              {{ item.created }}
-            </div>
             <div class="column">
               <div class="columns is-gapless">
                 <div class="column is-5-mobile is-3-tablet is-1-desktop">
